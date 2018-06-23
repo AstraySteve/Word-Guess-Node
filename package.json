@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AstraySteve/Word-Guess-Node/issues"
   },
-  "homepage": "https://github.com/AstraySteve/Word-Guess-Node#readme"
+  "homepage": "https://github.com/AstraySteve/Word-Guess-Node#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0"
+  }
 }
