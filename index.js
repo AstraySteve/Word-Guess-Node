@@ -1,5 +1,32 @@
 var wordConstruct = require("./Word");
-var inquire = require("inquirer");
+var inquirer = require("inquirer");
+
+//Global variable
+var remainingGuess = 5;
 
 //Randomly Select word
-//Prompt user for each guess
+var wordList = ["test","word","foobar","hello"];
+var ranNum = Math.floor(Math.random() * wordList.length);
+var word = new wordConstruct.buildWord(wordList[ranNum]);
+//console.log(word);
+
+wordGuess = () => {
+    console.log(word.returnWord());
+    //Prompt user for each guess
+    if(remainingGuess>0){
+        inquirer.prompt([
+            {
+                "name": "guessChar",
+                "type": "input",
+                "message": "Guess a Letter",
+            }
+        ]).then(answers => {
+            word.guessChar(answers.guessChar);
+            console.log(remainingGuess);
+            remainingGuess--;
+            wordGuess();
+        });
+    }
+}
+
+wordGuess();

@@ -27,23 +27,3 @@ class buildWord{
 module.exports = {
     buildWord: buildWord
 }
-
-//DEBUG
-/*
-var T = new character.letter("t");
-var E = new character.letter("e");
-var S = new character.letter("s");
-
-var testWord = new buildWord("test");
-var test = testWord.returnWord();
-console.log(test);
-testWord.guessChar("t");
-test = testWord.returnWord();
-console.log(test);
-testWord.guessChar("e");
-test = testWord.returnWord();
-console.log(test);
-testWord.guessChar("s");
-test = testWord.returnWord();
-console.log(test);
-*/

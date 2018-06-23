@@ -21,16 +21,3 @@ class letter{
 module.exports = {
     letter: letter
 }
-
-//DEBUG
-/*
-var test = new letter("x");
-console.log(test.character);
-console.log(test.guessed);
-var testValue = test.returnChar();
-console.log(testValue);
-test.isCorrect("x");
-console.log(test.guessed);
-testValue = test.returnChar();
-console.log(testValue);
-*/
