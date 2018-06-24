@@ -22,10 +22,17 @@ wordGuess = () => {
             }
         ]).then(answers => {
             word.guessChar(answers.guessChar);
+            if (word.returnWord().toString() == wordList[ranNum]){
+                console.log("You Guess Correctly!");
+                remainingGuess = 0;
+            }
             console.log(remainingGuess);
             remainingGuess--;
             wordGuess();
         });
+    }
+    else{
+        console.log(wordList[ranNum]);
     }
 }
 
