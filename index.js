@@ -7,7 +7,8 @@ var remainingGuess = 5;
 //Randomly Select word
 var wordList = ["test","word","foobar","hello"];
 var ranNum = Math.floor(Math.random() * wordList.length);
-var word = new wordConstruct.buildWord(wordList[ranNum]);
+var wordKey = wordList[ranNum];
+var word = new wordConstruct.buildWord(wordKey);
 //console.log(word);
 
 wordGuess = () => {
@@ -22,17 +23,23 @@ wordGuess = () => {
             }
         ]).then(answers => {
             word.guessChar(answers.guessChar);
-            if (word.returnWord().toString() == wordList[ranNum]){
+            if (word.returnWord().toString() == wordKey){
                 console.log("You Guess Correctly!");
+                console.log(`The word was: ${wordKey}`);
                 remainingGuess = 0;
             }
-            console.log(remainingGuess);
-            remainingGuess--;
-            wordGuess();
+            else if(wordKey.indexOf(answers.guessChar) != -1){
+                wordGuess();
+            }
+            else{
+                console.log(remainingGuess);
+                remainingGuess--;
+                wordGuess();
+            }
         });
     }
     else{
-        console.log(wordList[ranNum]);
+        console.log(`The word was: ${wordKey}`);
     }
 }
 
