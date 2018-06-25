@@ -29,16 +29,18 @@ wordGuess = () => {
                 remainingGuess = 0;
             }
             else if(wordKey.indexOf(answers.guessChar) != -1){
+                console.log(`Remaining guess: ${remainingGuess}`);
                 wordGuess();
             }
             else{
-                console.log(remainingGuess);
+                console.log(`Remaining guess: ${remainingGuess}`);
                 remainingGuess--;
                 wordGuess();
             }
         });
     }
     else{
+        console.log(`Remaining guess: ${remainingGuess}`);
         console.log(`The word was: ${wordKey}`);
     }
 }
